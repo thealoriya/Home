@@ -1,36 +1,18 @@
-document.addEventListener("DOMContentLoaded", function () {
-    var contactForm = document.getElementById("contactForm");
-
-    contactForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        // Get form data
-        var formData = new FormData(contactForm);
-
-        // Perform AJAX request
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "your_form_submission_endpoint_here", true);
-
-        // Set up the callback
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    // Successful response, show success message
-                    showSuccessMessage();
-                } else {
-                    // Error handling (you can customize this part)
-                    alert("Error submitting the form. Please try again later.");
-                }
-            }
-        };
-
-        // Send the form data
-        xhr.send(formData);
+function submitForm(event) {
+    event.preventDefault();
+    fetch('https://script.google.com/macros/s/AKfycbzFouTq2KIAdOb98mJb6DgJc7eUNzF9_tDr2wU6ZUavnYDfp8TTlz-voYjN--bjh2nU/exec', {
+        method: 'POST',
+        body: new FormData(document.getElementById('contactForm'))
+    })
+    .then(response => {
+        if (response.ok) {
+            alert('Sent');
+        } else {
+            alert('Failed to send. Please try again.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again later.');
     });
-
-    function showSuccessMessage() {
-        // Customize this function to display your success message
-        alert("Your message has been sent successfully!");
-        // You can also redirect the user to a thank you page or update the UI as needed.
-    }
-});
+}
