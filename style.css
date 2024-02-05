@@ -180,7 +180,7 @@ body {
     background: #262626;
     padding: 40px;
     font-size: 13px;
-    font-size: 300;
+    font-size: 100;
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
     color: #fff;
@@ -196,7 +196,7 @@ body {
 
 .services-list div i {
     color: #fff;
-    font-size: 45px;
+    font-size: 30px;
     padding: 0 0;
 }
 
