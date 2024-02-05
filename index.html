@@ -7,38 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <script src="https://kit.fontawesome.com/f1bceb7c73.js" crossorigin="anonymous"></script>
-    <!-- Add this script tag to the head of your HTML file -->
-    <script>
-        const form = document.getElementById("contactForm");
-    
-        form.addEventListener("submit", function (event) {
-        event.preventDefault();
-    
-        // Get form data
-        const formData = new FormData(form);
-    
-        // Perform AJAX request to Google Apps Script
-        fetch("https://script.google.com/macros/s/AKfycbyC2Eo9FaC0898ohGbmckAUoEOR8fym8ZcDPfR3YBSfyDcDCTf1Vz1EOVQAMfSPPAL_5A/exec", {
-            method: "POST",
-            body: formData,
-        })
-            .then((response) => response.json())
-            .then((data) => {
-            // Display success message
-            if (data.success) {
-                showSuccessMessage();
-            } else {
-                alert("Error submitting the form. Please try again later.");
-            }
-            });
-        });
-    
-        function showSuccessMessage() {
-        // Customize this function to display your success message
-        alert("Your message has been sent successfully!");
-        // You can also redirect the user to a thank you page or update the UI as needed.
-        }
-    </script>
   
 </head>
 <body>
@@ -55,8 +23,8 @@
             <a href="#about">About</a>
             <a href="#services">Services</a>
             <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact Me</a>
             <a href="Ranjeet_Aloriya.pdf" download>Resume</a>
+            <a href="#contact">Hire Me</a>
         </div>
         <div>
             <a href="mailto:ranjeet.aloriya@gmail.com">ranjeet.aloriya@gmail.com</a>
@@ -80,32 +48,26 @@
         </div>
         <div class="about-text">
             <h2>About Me</h2>
-            <p>
-                I'm a seasoned specialist in Cyber Incident Response, Data Breach Analysis, and Programmatic Extraction, currently serving as the Technical Team Lead at Integreon. At UnitedLex, as a Technical Lead, I led diverse projects, excelling in data extraction with tools like Python and Advanced Excel. In roles such as Senior Associate, I significantly contributed to transforming complex data sets, engaging in statistical analyses and proposing innovative approaches.
-
-In Data Breach/Incident Response at UnitedLex, I oversaw projects across the US, UK, and other jurisdictions, ensuring stringent adherence to quality standards and maintaining confidentiality. Beyond, as Lead in Audio Annotation & Analytics at Bits and Bytes, I excelled in transcriptions, machine learning feedback, and efficient administrative management. Additionally, as a Data Analyst at PolicyX.com, I measured employee performance and executed data audits.
-
-My academic journey includes a Master's in Mechanical Engineering from ITM University, Gwalior. Throughout my dynamic career, I've exhibited adaptability, resilience, and an unwavering pursuit of excellence. From technical leadership to diverse analytical roles, my commitment to quality and security has been consistent, reflecting a versatile skill set and a dedication to continuous learning. Looking forward, I aim to contribute to the evolving landscape of cybersecurity and technological innovation.
-            </p>
+            <p>I'm a seasoned specialist in Cyber Incident Response, Data Breach Analysis, and Programmatic Extraction, currently serving as the Technical Team Lead at Integreon. At UnitedLex, as a Technical Lead, I led diverse projects, excelling in data extraction with tools like Python and Advanced Excel. In roles such as Senior Associate, I significantly contributed to transforming complex data sets, engaging in statistical analyses and proposing innovative approaches. In Data Breach/Incident Response at UnitedLex, I oversaw projects across the US, UK, and other jurisdictions, ensuring stringent adherence to quality standards and maintaining confidentiality. Beyond, as Lead in Audio Annotation & Analytics at Bits and Bytes, I excelled in transcriptions, machine learning feedback, and efficient administrative management. Additionally, as a Data Analyst at PolicyX.com, I measured employee performance and executed data audits. My academic journey includes a Master's in Mechanical Engineering from ITM University, Gwalior. Throughout my dynamic career, I've exhibited adaptability, resilience, and an unwavering pursuit of excellence. From technical leadership to diverse analytical roles, my commitment to quality and security has been consistent, reflecting a versatile skill set and a dedication to continuous learning. Looking forward, I aim to contribute to the evolving landscape of cybersecurity and technological innovation.</p>
         </div>
     </section>
 
     <section id="services" class="main">
         <h1 class="sub-title">Services</h1>
         <div class="services-list">
-            <div>
+            <div class="work-s">
                 <i class="fa-solid fa-code"></i>
                 <h2>Data Engineer</h2>
                 <p>Data engineering is the practice of designing and building systems for collecting, storing, and analyzing data at scale. It is a broad field with applications in just about every industry.</p>
                 <a href="#">Learn More</a>
             </div>
-            <div>
+            <div class="work-s">
                 <i class="fa-solid fa-table"></i>
                 <h2>Data Analyst</h2>
                 <p>Data analysis is a process of inspecting, cleansing, transforming, and modeling data with the goal of discovering useful information, informing conclusions, and supporting decision-making.</p>
                 <a href="#">Learn More</a>
             </div>
-            <div>
+            <div class="work-s">
                 <i class="fa fa-light fa-atom"></i>
                 <h2>Data Science</h2>
                 <p>Data science is an interdisciplinary academic field that uses statistics, scientific computing, scientific methods, processes, algorithms and systems to extract or extrapolate knowledge and insights from noisy, structured and unstructured data.</p>
@@ -141,13 +103,12 @@ My academic journey includes a Master's in Mechanical Engineering from ITM Unive
                     <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
-            <!-- Add your portfolio items here -->
         </div>
         <a href="#" class="btn">See More</a>
     </section>
 
     <section id="contact" class="main">
-        <h1 class="sub-title">Contact Me</h1>
+        <h1 class="sub-title">Hire Me</h1>
     
         <div class="contact-info">
             <div class="contact-details">
@@ -158,19 +119,19 @@ My academic journey includes a Master's in Mechanical Engineering from ITM Unive
                 </p>
             </div>
             <div class="contact-form">
-                <form id="contactForm" onsubmit="submitForm(); return false;">
+                <form id="contactForm" action="https://script.google.com/macros/s/AKfycbzFouTq2KIAdOb98mJb6DgJc7eUNzF9_tDr2wU6ZUavnYDfp8TTlz-voYjN--bjh2nU/exec" method="post" onsubmit="submitForm(event); return false;">
                     <label for="name">Name</label>
-                    <input type="text" id="name" placeholder="Please enter your name" required>
-    
+                    <input type="text" id="name" name="name" placeholder="Please enter your name" required>
+                  
                     <label for="email">Email Address</label>
-                    <input type="email" id="email" placeholder="Please enter your email address" required>
-    
+                    <input type="email" id="email" name="email" placeholder="Please enter your email address" required>
+                  
                     <label for="message">Message</label>
-                    <textarea id="message" placeholder="Please write your message" required></textarea>
-    
+                    <textarea id="message" name="message" placeholder="Please write your message" required></textarea>
+                  
                     <button type="submit">Send</button>
-                    <!-- ... (rest of the form code) ... -->
                 </form>
+                  
             </div>
         </div>
     </section>
@@ -186,16 +147,12 @@ My academic journey includes a Master's in Mechanical Engineering from ITM Unive
                     class="fab fa-facebook"></i></a>
         </div>
         <div class="copyright">
-            &copy; 2024 Ranjeet Aloriya
+            <p>&copy; 2024 ~ Ranjeet Aloriya. All Rights Reserved.</p>
         </div>
         <div class="email-address">
             <a href="mailto:ranjeet.aloriya@gmail.com" style="color: #fff;">ranjeet.aloriya@gmail.com</a>
         </div>
     </div>
-
-    
-
-    <!-- Add more content here -->
 
     <script src="script.js"></script>
 </body>
