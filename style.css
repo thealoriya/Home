@@ -6,8 +6,8 @@ body {
 }
 
 .sub-title{
-    font-size: 60px;
-    font-weight: 600;
+    /* font-size: 60px;
+    font-weight: 600; */
     color: #424244;
     text-align: center;
     /* background-color: #ff004f; */
@@ -16,6 +16,7 @@ body {
 /* Header Styling */
 .portfolio-box {
     padding: 2% 10%;
+    text-align: left;
     background-color:#CCD5AD;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -150,7 +151,7 @@ body {
 }
 
 .about-image img {
-    width: 120%;
+    width: 100%;
     height: auto;
     border-radius: 10px;
 }
@@ -174,19 +175,20 @@ body {
     background-color: #779977;
     display: flex;
     justify-content: space-between;
+    /* flex-wrap: wrap; */
 }
 
 .services-list div {
     background: #262626;
-    padding: 40px;
+    padding: 20px;
     font-size: 13px;
-    font-size: 100;
+    font-size: 300;
     border-radius: 10px;
     transition: background 0.5s, transform 0.5s;
     color: #fff;
     width: 30%;
     text-align: center;
-    margin: 0 15px; /* Adjusted margin for more space */
+    margin: 0 15px;
 }
 
 .services-list div:hover {
@@ -196,12 +198,12 @@ body {
 
 .services-list div i {
     color: #fff;
-    font-size: 30px;
+    font-size: 45px;
     padding: 0 0;
 }
 
 .services-list div h2 {
-    font-size: 15px;
+    font-size: 30px;
     font-weight: 500;
     margin-bottom: 15px;
 }
@@ -209,7 +211,7 @@ body {
 .services-list div a {
     text-decoration: none;
     color: #fff;
-    font-size: 8px;
+    font-size: 12px;
     display: inline-block;
     margin-top: 20px;
 }
@@ -243,7 +245,7 @@ body {
     background-color: #779977;
     display: flex;
     justify-content: space-between;
-    /* margin: 50px; */
+    /* flex-wrap: wrap; */
 }
 
 .work {
@@ -454,12 +456,90 @@ body {
     /* padding: 15px; */
 }
 
-.copyright {
+.copyright{
     text-align: center;
     flex-grow: 1;
     font-size: 14px;
+    color: #fff;
 }
 
 .email-address {
     margin-left: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    .portfolio-box,
+    .navigation-bar,
+    .welcome-box,
+    .about-section,
+    .about-text,
+    .main,
+    .services-list div,
+    .work,
+    .contact-info,
+    .bottom-navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .portfolio-box,
+    .navigation-bar,
+    .welcome-box,
+    .welcome-text,
+    .about-section,
+    .about-text,
+    .main,
+    .services-list,
+    .work,
+    .contact-info,
+    .bottom-navbar {
+        padding: 4% 3%;
+    }
+
+    .navigation-bar a {
+        margin: 10px 0;
+    }
+
+    .welcome-text,
+    .welcome-image,
+    .about-text,
+    .about-image,
+    .services-list,
+    .contact-details,
+    .contact-form {
+        width: 100%;
+    }
+
+    .services-list {
+        flex-direction: column;
+        /* padding-right:  4%; */
+        padding-top: 10%;
+    }
+
+    .services-list div {
+        width: 78%;
+        margin-bottom: 20px;
+        padding-top: 10%;
+        /* padding-right: 10%; */
+    }
+
+    .work {
+        width: 100%;
+        
+    }
+
+    .work-list {
+        flex-wrap: wrap;
+
+
+    }
+
+    .contact-info {
+        flex-direction: column;
+    }
+
+    .contact-form {
+        width: 78%;
+    }
+    
 }
