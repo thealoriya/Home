@@ -284,19 +284,19 @@ body {
 
 .layer h3 {
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 20px;
     font-style: oblique;
 }
 
 .layer p {
     text-align: center;
-    font-suze: 8px;
+    font-suze: 6px;
     padding: 0 5%;
 }
 
 .layer a {
-    margin: 20px;
+    margin: 10px;
     text-decoration: none;
     color: #ff004f;
     font-size: 18px;
