@@ -103,6 +103,7 @@ body {
 .services-list div:hover {
     background: #c62155;
     transform: translateY(-10px);
+    font-weight: bold;
 }
 
 .services-list div h2 {
