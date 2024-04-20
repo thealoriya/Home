@@ -16,3 +16,5 @@ function submitForm(event) {
         alert('An error occurred. Please try again later.');
     });
 }
+var url = window.location.href;
+var cleanedURL = url.replace(/#/g, '');
